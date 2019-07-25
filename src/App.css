@@ -8,7 +8,7 @@
   --mainBlack: #222;
   --mainTransition: all 0.3s ease-in-out;
   --mainSpacing: 0.3rem;
-}
+} 
 body{
   font-family: 'Open Sans', sans-serif;
   background: var(--mainGrey) !important;
