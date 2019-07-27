@@ -60,7 +60,7 @@ class ProductProvider extends Component {
         return cart;
     }
     getStorageProduct = () => {
-        return [];
+        return localStorage.getItem('singleProduct') ? JSON.parse(localStorage.getItem('singleProduct')) : {};
     }
     getTotals = () => {
         let subTotal = 0;
@@ -120,7 +120,15 @@ class ProductProvider extends Component {
         // console.log(id);
     }
     setSingleProduct = (id) => {
-        console.log(id);
+        let product = this.state.storeProducts.find(item => item.id === id);
+        localStorage.setItem('singleProduct', JSON.stringify(product));
+        this.setState({
+            singleProduct: {
+                ...product
+            },
+            loading: false
+        })
+        // console.log(id);
     }
     handleSidebar = () => {
         this.setState({
