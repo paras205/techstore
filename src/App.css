@@ -13,6 +13,7 @@ body{
   font-family: 'Open Sans', sans-serif;
   background: var(--mainGrey) !important;
   color: var(--mainBlack);
+  overflow-x: hidden;
 }
 .text-main{
   color: var(--primaryColor);

@@ -28,7 +28,7 @@ const HeroWrapper = styled.div`
         letter-spacing: var(--mainSpacing);
     }
 `
-/* default image if img not found */
+/* default image if there is no image on specific page */
 Hero.defaultProps = {
     img: mainBackground
 }
