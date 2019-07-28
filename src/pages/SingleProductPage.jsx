@@ -23,7 +23,7 @@ export default function SingleProductPage() {
                                     <div className="col-md-6">
                                         <img
                                             style={{ width: "100%" }}
-                                            src={`../${image}`} alt="single Product Image" className="img-fluid img-thumbnail" />
+                                            src={`../${image}`} alt="{title}" className="img-fluid img-thumbnail" />
                                     </div>
                                     <div className="col-md-6">
                                         <h5 className="text-title mb-4">model: {title}</h5>
@@ -43,7 +43,7 @@ export default function SingleProductPage() {
                                         <button type="button" className="main-link" style={{
                                             margin: "0.75rem"
                                         }}
-                                            onclick={() => addToCart(id)}
+                                            onClick={() => addToCart(id)}
                                         >add to cart</button>
                                         <Link to="/products" className="main-link" style={{
                                             margin: "0.75rem"

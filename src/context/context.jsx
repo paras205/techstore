@@ -150,6 +150,32 @@ class ProductProvider extends Component {
             cartOpen: true
         })
     }
+    // cart functionality
+    increament = (id) => {
+        // console.log(id);
+        let tempCart = [...this.state.cart];
+        const CartItem = tempCart.find(item => item.id === id);
+        CartItem.count++;
+        CartItem.total = CartItem.count * CartItem.price;
+        CartItem.total = parseFloat(CartItem.total.toFixed(2));
+        this.setState(() => {
+            return {
+                cart: [...tempCart]
+            }
+        }, () => {
+            this.addTotals()
+            this.syncStorage()
+        })
+    }
+    decreament = (id) => {
+        console.log(id);
+    }
+    removeItem = (id) => {
+        console.log(id);
+    }
+    clearCart = () => {
+        console.log('No items in the cart');
+    }
     render() {
         return (
             < ProductContext.Provider value={{
@@ -159,7 +185,11 @@ class ProductProvider extends Component {
                 closeCart: this.closeCart,
                 openCart: this.openCart,
                 addToCart: this.addToCart,
-                setSingleProduct: this.setSingleProduct
+                setSingleProduct: this.setSingleProduct,
+                increament: this.increament,
+                decreament: this.decreament,
+                removeItem: this.removeItem,
+                clearCart: this.clearCart
             }} >
                 {this.props.children}
             </ProductContext.Provider >
